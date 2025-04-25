@@ -1,0 +1,208 @@
+/* Reset de estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Rubik', sans-serif;
+    background: url('/static/img/logo.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Asegura que el contenido se centre verticalmente */
+    align-items: center;      /* Asegura que el contenido se centre horizontalmente */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe todo el alto */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(255, 255, 255, 0.85); /* Fondo con opacidad */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    color: #3f51b5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo ligeramente transparente */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* Estilo de los inputs */
+input[type="text"],
+input[type="number"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    background: #f7f9fc;
+    color: #333;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+input:focus {
+    border-color: #00bcd4;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+    outline: none;
+}
+
+/* Estilo del botón */
+button {
+    padding: 14px;
+    background: linear-gradient(to right, #ff6f61, #ffcc70);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 18px rgba(255, 111, 97, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 22px rgba(255, 111, 97, 0.6);
+}
+
+
+/* Estilo de los resultados */
+.result {
+    margin-top: 30px;
+    padding: 24px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    border: 2px dashed #00bcd4;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+    animation: fadeInResult 1s ease;
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result h3 {
+    font-size: 22px;
+    color: #00acc1;
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    text-shadow: 0 0 3px rgba(0, 188, 212, 0.1);
+}
+
+/* Estilo de pie de página */
+footer {
+    position: absolute;  /* Esto asegura que el pie de página se quede al fondo */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+footer p:first-child {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #ffeb3b;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Partido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Predicción de Resultado Deportivo</h2>
+        <form method="POST">
+            <label for="home_team">Equipo Local:</label>
+            <input type="text" name="home_team" required>
+            
+            <label for="away_team">Equipo Visitante:</label>
+            <input type="text" name="away_team" required>
+            
+            <label for="home_rank">Ranking Equipo Local:</label>
+            <input type="number" name="home_rank" required>
+            
+            <label for="away_rank">Ranking Equipo Visitante:</label>
+            <input type="number" name="away_rank" required>
+            
+            <button type="submit">Predecir</button>
+        </form>
+        
+        {% if prediction %}
+        <div class="result">
+            <h3>Resultado Predicho:</h3>
+            <p><strong>{{ home_team }}</strong> vs <strong>{{ away_team }}</strong></p>
+            <p><strong>Ganador:</strong> {{ winner }}</p>
+            <p><strong>Perdedor:</strong> {{ loser }}</p>
+            <form method="GET">
+                <button type="submit">🔄 Predecir Otro Partido</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Footer bonito abajo -->
+    <footer>
+        <p>&copy; 2025 <strong>Otero León Josué, Valdivia Ortega Jhan Pool, Caballon Martel Daniel Teddy</strong></p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
